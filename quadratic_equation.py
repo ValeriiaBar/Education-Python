@@ -5,7 +5,7 @@ def get_numbers_input() -> tuple[str]:
     getting from terminal data and returning it
     :return: tuple of three strings separated by spaces
     """
-    return input("Enter tuple of three digits by space: ").split()
+    return tuple(input("Enter tuple of three digits by space: ").split())
 
 
 def valid_data(user_input: tuple[str]) -> tuple[int]:
@@ -47,7 +47,7 @@ def main():
     user_input = get_numbers_input()
     valid_user_data = valid_data(user_input)
     result = roots_of_equation(valid_user_data)
-    print("КОРЕШКИ: {result}")
+    print(f"КОРЕШКИ: {result}")
 
 
 if __name__ == '__main__':
