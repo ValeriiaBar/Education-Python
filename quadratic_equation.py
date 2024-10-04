@@ -1,18 +1,18 @@
 import math
 
-def get_numbers_input() -> list[str]:
+def get_numbers_input() -> tuple[str]:
     """
     getting from terminal data and returning it
-    :return: List of three strings separated by spaces
+    :return: tuple of three strings separated by spaces
     """
-    return input("Enter list of three digits by space: ").split()
+    return input("Enter tuple of three digits by space: ").split()
 
 
-def valid_data(user_input: list[str]) -> list[int]:
+def valid_data(user_input: tuple[str]) -> tuple[int]:
     """
-    Validate input data and convert to list of integers
-    :param user_input: list of three strings
-    :return: list of three validated integers ready for work
+    Validate input data and convert to tuple of integers
+    :param user_input: tuple of three strings
+    :return: tuple of three validated integers ready for work
     """
     if len(user_input) != 3:
         raise ValueError("НАДО 3 ЧИСЛА")
@@ -26,7 +26,7 @@ def valid_data(user_input: list[str]) -> list[int]:
 def roots_of_equation(valid_user_data: list[int]) -> tuple[float,float]:
     """
     finding discriminant and roots by formuls
-    :param valid_user_data: list of three integers [a, b, c]
+    :param valid_user_data: tuple of three integers (a, b, c)
     :return: tuple of two roots
     """
     a, b, c = valid_user_data
@@ -47,7 +47,7 @@ def main():
     user_input = get_numbers_input()
     valid_user_data = valid_data(user_input)
     result = roots_of_equation(valid_user_data)
-    print("КОРЕШКИ:", result)
+    print("КОРЕШКИ: {result}")
 
 
 if __name__ == '__main__':
