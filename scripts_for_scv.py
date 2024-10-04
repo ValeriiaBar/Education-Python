@@ -1,6 +1,9 @@
 import math
 import pandas as pd
 
+INPUT_FILE_NAME = "quadratic_coefficients.csv"
+OUTPUT_FILE_NAME = "roots_output.csv"
+
 def read_coefficients_from_csv(file_path: str) -> pd.DataFrame:
     """
     Read coefficients from a CSV file and return a DataFrame.
@@ -60,4 +63,5 @@ def main(file_path: str, output_file_path: str):
     save_dataframe_to_csv(results_df, output_file_path)
 
 if __name__ == '__main__':
-    main("quadratic_coefficients.csv", "roots_output.csv")
+    main(input_file_name, output_file_name)
+    
