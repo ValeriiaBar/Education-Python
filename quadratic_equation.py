@@ -18,12 +18,12 @@ def valid_data(user_input: tuple[str]) -> tuple[int]:
         raise ValueError("НАДО 3 ЧИСЛА")
 
     try:
-        return [int(el) for el in user_input]
+        return (int(el) for el in user_input)
     except ValueError:
         raise ValueError("ЭТО НЕ ЦЕЛЫЕ ЧИСЛА, ВВЕДИ ЧИСЛА!!")
 
 
-def roots_of_equation(valid_user_data: list[int]) -> tuple[float,float]:
+def roots_of_equation(valid_user_data: tuple[int]) -> tuple[float,float]:
     """
     finding discriminant and roots by formuls
     :param valid_user_data: tuple of three integers (a, b, c)
