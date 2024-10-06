@@ -2,8 +2,10 @@ import math
 import pandas as pd
 
 # CONSTANTS FOR FILE NAMES
+
 INPUT_FILE_NAME = "quadratic_coefficients.csv"
 OUTPUT_FILE_NAME = "roots_output.csv"
+
 def read_coefficients_from_csv(file_path: str) -> pd.DataFrame:
     """
     Read coefficients from a CSV file and return a DataFrame.
@@ -48,10 +50,9 @@ def save_dataframe_to_csv(df: pd.DataFrame, output_file_path: str) -> None:
     df.index.name = 'Index'
     df.to_csv(output_file_path)
 
-def main(file_path: str, output_file_path: str):
-    coefficients_df = read_coefficients_from_csv(file_path)
+def main():
+    coefficients_df = read_coefficients_from_csv(INPUT_FILE_NAME)
     results_df = create_roots_dataframe(coefficients_df)
-    save_dataframe_to_csv(results_df, output_file_path)
-
+    save_dataframe_to_csv(results_df, OUTPUT_FILE_NAME)
 if __name__ == '__main__':
-    main(INPUT_FILE_NAME, OUTPUT_FILE_NAME)
+    main()
