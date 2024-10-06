@@ -15,7 +15,7 @@ def read_coefficients_from_csv(file_path: str) -> pd.DataFrame:
     return pd.read_csv(file_path)
 
 
-def roots_of_equation(row: pd.Series) -> tuple:
+def roots_of_equation(row: pd.Series) -> tuple[float, float] | tuple[str, str]:
     """
     Calculate the roots of a quadratic equation.
     :return: Tuple of two roots or strings indicating complex roots
